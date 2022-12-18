@@ -78,7 +78,7 @@ export const DivStyle = styled.div`
   }
 
   .border {
-    margin-top: 21px;
+    margin: 0 18px;
     border-bottom: 2px solid ${({ theme }) => theme.colors.grey100};
   }
 `;
