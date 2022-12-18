@@ -91,5 +91,4 @@ export const CloseButtonModal = styled(AiOutlineCloseCircle)`
         color: ${({ theme }) => theme.colors.grey100};
     }
 
-    padding: 8px
 `
