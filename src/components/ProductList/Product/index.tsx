@@ -3,6 +3,8 @@ import { CartContext } from "../../../contexts/CartContext";
 import { iProductCart } from "../../../contexts/CartContext/types";
 import { ButtonStyled } from "../../../styles/Button";
 import { StyledLi } from "./style";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const Product = ({ id, name, category, price, image}: iProductCart) => {
   const {productCart, setProductCart, quantityProductCart, setQuantityProductCart} = useContext(CartContext)
@@ -27,6 +29,17 @@ export const Product = ({ id, name, category, price, image}: iProductCart) => {
       setProductCart([...productCart, product])
     }
     
+    toast.success('Produto adicionado ao carrinho!', {
+      position: "top-right",
+      autoClose: 700,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      });
+
     setQuantityProductCart([...quantityProductCart, product])
   }
 

@@ -8,6 +8,7 @@ import { api } from "../../services/api";
 export const UserContext = createContext({} as iUserProviderValue);
 
 export const UserProvider = ({ children }: iUserProviderProps) => {
+  const [darkMode, setDarkMode] = useState(false);
   const [registerError, setRegisterError] = useState(false);
   const navigate = useNavigate();
 
@@ -93,7 +94,7 @@ export const UserProvider = ({ children }: iUserProviderProps) => {
   }
   return (
     <UserContext.Provider
-      value={{ navigate, userRegister, registerError, setRegisterError, userLogin }}
+      value={{ darkMode, setDarkMode, navigate, userRegister, registerError, setRegisterError, userLogin }}
     >
       {children}
     </UserContext.Provider>

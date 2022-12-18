@@ -3,17 +3,20 @@ import styled from "styled-components";
 import { ButtonStyled } from "../../styles/Button";
 import { MdLogout } from "react-icons/md"
 import { FaSearch } from "react-icons/fa";
-import {AiOutlineClose} from "react-icons/ai"
+import { RiMoonClearFill } from "react-icons/ri"
+import { ImSun } from "react-icons/im"
 
 export const Headers = styled.header`  
+  padding: 25px 0;
+  background: ${({ theme }) => theme.colors.backgroundHeader};
+  box-shadow: 0px 13px 14px 0px ${({ theme }) => theme.colors.boxShadowHeader};
+
   div {
       display: flex;
       align-items: center;
       justify-content: space-between;
   }
 
-  padding: 25px 0;
-  background: ${({ theme }) => theme.colors.grey0};
 
   & > div {
     display: flex;
@@ -50,6 +53,7 @@ export const Headers = styled.header`
           max-width: 75%;
           font-size: var(--heading-4);
           line-height: 19px;
+          background-color: transparent;
           color:  ${({ theme }) => theme.colors.grey300};
           font-family: 'Inter',sans-serif;
           border: none;
@@ -153,6 +157,20 @@ export const MobileSearch = styled(FaSearch)`
   }
 `
 
-export const CloseInput = styled(AiOutlineClose)`
+export const IconMoon = styled(RiMoonClearFill)`
+  cursor: pointer;
+  color: ${({ theme }) => theme.colors.grey300};
 
+  :hover {
+    color: #cccc00;
+  }
+`
+
+export const IconSun = styled(ImSun)`
+  cursor: pointer;
+  color: #cccc00;
+
+  :hover {
+    filter: brightness(0.9);
+  }
 `

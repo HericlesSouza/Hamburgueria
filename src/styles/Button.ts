@@ -42,16 +42,17 @@ export const ButtonStyled = styled.button <iButton>`
                 color: ${({theme}) => theme.colors.grey300};
 
                 :hover {
-                    background: ${({theme}) => theme.colors.grey300};
-                    border: 2px solid ${({theme}) => theme.colors.grey300};
-                    color: ${({theme}) => theme.colors.grey100};
+                    background: ${({theme}) => theme.colors.buttonHover};
+                    border: 2px solid ${({theme}) => theme.colors.buttonHover};
+                    color: ${({theme}) => theme.colors.buttonHoverText};
                 }
                 `;
+                
             case "btnRed":
                 return css`
                 background: ${({theme}) => theme.colors.colorSecondary};
                 border: 2px solid ${({theme}) => theme.colors.colorSecondary};
-                color: ${({theme}) => theme.colors.grey300};
+                color: ${({theme}) => theme.colors.buttonHover};
                 `
         }
     }}

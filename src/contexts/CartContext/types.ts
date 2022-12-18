@@ -7,9 +7,17 @@ export interface iProductCart {
     price: string | number;
     image: string;
 }
+
+export interface iProductList {
+    id: string;
+    name: string;
+    category?: string;
+    price: string | number;
+    img: string;
+}
 export interface iCartProviderValue {
     token: string | null | undefined,
-    menuItem: [],
+    menuItem: any,
     searchedItem: any,
     setSearchedItem: React.Dispatch<React.SetStateAction<any>>,
     setToken: React.Dispatch<React.SetStateAction<string | null>>,

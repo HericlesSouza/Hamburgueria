@@ -72,7 +72,7 @@ export const StyledUl = styled.ul`
     width: 100%;
     overflow-x: visible;
     max-width: 846px;
-    margin: 20px 0;
+    margin: 40px 0;
     overflow: hidden;
   }
 

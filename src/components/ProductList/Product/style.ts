@@ -5,7 +5,7 @@ export const StyledLi = styled.li`
   min-width: 300px;
   height: 350px;
   background: ${({theme}) => theme.colors.white};
-  border: 2px solid ${({theme}) => theme.colors.grey100};
+  border: 2px solid ${({theme}) => theme.colors.borderLi};
   border-radius: var(--border-radius-1);
 
   :hover {
@@ -26,7 +26,7 @@ export const StyledLi = styled.li`
     align-items: center;
     justify-content: center;
     height: 150px;
-    background: ${({theme}) => theme.colors.grey0};
+    background: ${({theme}) => theme.colors.backgroundLi};
   }
 
   figure > img {

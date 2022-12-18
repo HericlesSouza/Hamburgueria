@@ -12,12 +12,41 @@ export const mainTheme = {
         white: "#FFFFFF",
         negative: "#E60000",
         backgroundGreen: "rgba(39, 174, 96, 0.1)",
+        borderLi: "#E0E0E0",
+        backgroundLi: "#F5F5F5",
+        backgroundHeader: "#F5F5F5",
+        boxShadowHeader: "transparent",
+        buttonHover: "#828282",
+        buttonHoverText:"#FFFFFF",
     },
     shadow: {
         boxShadow: "rgba(0, 0, 0, 0.25)"
     }
 };
 
+export const darkTheme = {
+    colors: {
+        colorPrimary: "#cccc00",
+        colorSecondary: "#EB5757",
+        grey0: "#333333",
+        grey100: "#828282",
+        grey200: "#999999",
+        grey300: "#E0E0E0",
+        grey600: "#F5F5F5",
+        white: "#000000",
+        negative: "#E60000",
+        backgroundGreen: "rgba(39, 174, 96, 0.1)",
+        borderLi: "#E0E0E0",
+        backgroundLi: "#999999",
+        backgroundHeader: "#000000",
+        boxShadowHeader: "#cccc00",
+        buttonHover: "#999999",
+        buttonHoverText:"#FFFFFF"
+    },
+    shadow: {
+        boxShadow: "rgba(0, 0, 0, 0.25)"
+    }
+};
 export const GlobalStyle = createGlobalStyle`
     :root {
         --font-weight-1: 500;
@@ -36,6 +65,8 @@ export const GlobalStyle = createGlobalStyle`
 
         --border-radius-1: 5px;
         --border-radius-2: 8px;
+
+        --animate-duration: 700ms;
     }
 
     * {
@@ -70,4 +101,5 @@ export const GlobalStyle = createGlobalStyle`
         height: 100%;
     }
 `;
+
 
