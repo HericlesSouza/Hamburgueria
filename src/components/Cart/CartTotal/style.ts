@@ -3,6 +3,7 @@ import { ButtonStyled } from "../../../styles/Button";
 
 
 export const StyledDiv = styled.div`
+  margin-top: 15px;
   padding: 0 18px;
   display: flex;
   flex-direction: column;

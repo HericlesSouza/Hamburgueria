@@ -62,6 +62,15 @@ export const StyledLi = styled.li`
     }
   }
 
+  .div-price {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    span {
+      color: ${({theme}) => theme.colors.grey300};
+    }
+  }
 `;
 
 export const Trash = styled(FiTrash2)`
@@ -76,11 +85,9 @@ export const Trash = styled(FiTrash2)`
 export const Subtract = styled(BsDashCircleDotted)`
     margin: 2px 8px 0 8px;
     cursor: pointer;
-    color: ${({theme}) => theme.colors.colorSecondary};
 `
 
 export const Add = styled(BsPlusCircleDotted)`
     margin: 2px 8px 0 8px;
     cursor: pointer;
-    color: ${({theme}) => theme.colors.colorSecondary};
 `

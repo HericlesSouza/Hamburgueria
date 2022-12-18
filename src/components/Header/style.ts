@@ -71,7 +71,9 @@ export const Headers = styled.header`
       position: relative;
 
       .div-counter {
-        padding: 12px 5px;
+        display: flex;
+        justify-content: center;
+        padding: 12px 13px;
         position: absolute;
         top: -12px;
         right: -10px;

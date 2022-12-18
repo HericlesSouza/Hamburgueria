@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { FaSearch } from "react-icons/fa";
-import { CartContext } from "../../contexts/CartContext";
-import { ModalWrapper } from "../Modal";
+import { CartContext,  } from "../../contexts/CartContext";
 import {
   ButtonSearch,
   Headers,
@@ -12,8 +11,8 @@ import {
 import Logo from "/src/assets/logo.png";
 
 export const Header = () => {
-  const { modal, setModal } = useContext(CartContext);
-  console.log('oi')
+  const { setModal, quantityProductCart } = useContext(CartContext);
+  
   return (
     <Headers>
       <div className="container">
@@ -31,9 +30,8 @@ export const Header = () => {
           <div className="shopping-car" onClick={() => setModal(true)}>
             <ShoppingCar size={30} />
             <div className="div-counter">
-              <span>3</span>
+              <span>{quantityProductCart.length}</span>
             </div>
-        
           </div>
           <IconLogout size={30} />
         </div>
