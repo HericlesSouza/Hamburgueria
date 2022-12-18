@@ -7,6 +7,8 @@ import {
   ButtonSearch,
   Headers,
   IconLogout,
+  IconMoon,
+  IconSun,
   MobileSearch,
   ShoppingCar,
 } from "./style";
@@ -21,6 +23,7 @@ export const Header = () => {
   const [search, setSearch] = useState(false);
   const [valueInput, setValueInput] = useState("");
   const [animateShowInput, setAnimateShowInput] = useState("");
+  const {darkMode, setDarkMode} = useContext(UserContext)
 
   const filterProducts = (event: React.ChangeEvent<HTMLInputElement>) => {
     const searchedItem = menuItem.filter((element: iProductCart) =>
@@ -95,6 +98,11 @@ export const Header = () => {
               <FaSearch size={13} />
             </ButtonSearch>
           </div>
+          {darkMode ? (
+            <IconSun size={30} onClick={() => setDarkMode(false)}/> 
+          ): (
+            <IconMoon size={30} onClick={() => setDarkMode(true)}/>
+          )}
           <div className="shopping-car" onClick={() => setModal(true)}>
             <ShoppingCar size={30} />
             <div className="div-counter">

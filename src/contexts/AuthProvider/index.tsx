@@ -1,6 +1,5 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext} from "react";
 import { useNavigate } from "react-router-dom";
-import { api } from "../../services/api";
 import { iAuthProvider, iAuthProviderValue} from "./types";
 
 export const AuthContext = createContext({} as iAuthProviderValue);

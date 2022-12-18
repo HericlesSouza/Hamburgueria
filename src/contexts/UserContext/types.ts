@@ -5,6 +5,8 @@ export interface iUserProviderProps {
     children: React.ReactNode;
 }
 export interface iUserProviderValue {
+    darkMode: boolean,
+    setDarkMode: React.Dispatch<React.SetStateAction<boolean>>,
     navigate: NavigateFunction
     userRegister(data: iRegisterUser): void,
     registerError: boolean,
