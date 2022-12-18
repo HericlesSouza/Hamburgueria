@@ -1,8 +1,17 @@
+import { HiShoppingCart } from "react-icons/hi";
 import styled from "styled-components";
 import { ButtonStyled } from "../../styles/Button";
+import { MdLogout } from "react-icons/md"
+import { FaSearch } from "react-icons/fa";
 
-export const Headers = styled.header`
-  padding: 14px 0;
+export const Headers = styled.header`  
+  div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+
+  padding: 25px 0;
   background: ${({ theme }) => theme.colors.grey0};
 
   & > div {
@@ -18,26 +27,67 @@ export const Headers = styled.header`
     justify-content: center;
   }
 
-  div > div {
-    margin-top: 14px;
+  .div-options {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    background: ${({ theme }) => theme.colors.white};
-    border: 2px solid ${({ theme }) => theme.colors.grey100};
-    border-radius: var(--border-radius-2);
+    gap: 23px;
 
-    input {
-        font-size: var(--heading-4);
-        line-height: 19px;
-        color:  ${({ theme }) => theme.colors.grey100};
-        border: none;
-        outline: none;
+    @media (max-width: 320px) {
+      gap: 10px;
+    }
+    
+    .div-input {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+      background: ${({ theme }) => theme.colors.white};
+      border: 2px solid ${({ theme }) => theme.colors.grey100};
+      border-radius: var(--border-radius-2);
+  
+      input {
+          max-width: 75%;
+          font-size: var(--heading-4);
+          line-height: 19px;
+          color:  ${({ theme }) => theme.colors.grey300};
+          font-family: 'Inter',sans-serif;
+          border: none;
+          outline: none;
+      }
+  
+      input::placeholder {
+          color: ${({ theme }) => theme.colors.grey100};
+      }
+
+    }
+    
+    @media (max-width: 700px) {
+      .div-input {
+        display: none;
+      }
     }
 
-    input::placeholder {
-        color: ${({ theme }) => theme.colors.grey100};
+    .shopping-car {
+      position: relative;
+
+      .div-counter {
+        padding: 12px 5px;
+        position: absolute;
+        top: -12px;
+        right: -10px;
+        background: ${({ theme }) => theme.colors.colorPrimary};
+        border-radius: var(--border-radius-2);
+        height: 25px;
+        width: 20px;
+
+        span {    
+          font-weight: var(--font-weight-5);
+          font-size: var(--heading-5);
+          color: #FFFFFF;
+        }
+      }
+
+     
     }
   }
 
@@ -50,8 +100,33 @@ export const Headers = styled.header`
   }
 `;
 
-export const NewButton = styled(ButtonStyled)`
-    padding: 5px 15px;
+export const ButtonSearch = styled(ButtonStyled)`
+  padding: 5px 15px;
 `
 
+export const ShoppingCar = styled(HiShoppingCart)`
+  position: relative;
+  cursor: pointer;
+  color:  ${({ theme }) => theme.colors.grey300};
 
+  :hover {
+    color:  ${({ theme }) => theme.colors.colorPrimary};
+  }
+`
+
+export const IconLogout = styled(MdLogout)`
+  cursor: pointer;
+  color:  ${({ theme }) => theme.colors.grey300};
+
+  :hover {
+    color:  ${({ theme }) => theme.colors.colorPrimary};
+  }
+`
+
+export const MobileSearch = styled(FaSearch)`
+  color: ${({ theme }) => theme.colors.grey300};
+
+  @media (min-width: 700px) {
+    display: none;
+  }
+`
