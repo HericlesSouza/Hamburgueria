@@ -70,7 +70,7 @@ export const UserProvider = ({ children }: iUserProviderProps) => {
       });
 
       navigate("/dashboard");
-      console.log(request)
+  
      localStorage.setItem('@token', JSON.stringify(request.data.accessToken))
       
     } catch (error){

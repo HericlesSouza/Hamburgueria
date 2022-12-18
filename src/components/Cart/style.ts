@@ -90,5 +90,4 @@ export const CloseButtonModal = styled(AiOutlineCloseCircle)`
     :hover {
         color: ${({ theme }) => theme.colors.grey100};
     }
-
 `
