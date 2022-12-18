@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Cart } from "../../components/Cart";
 import { Header } from "../../components/Header";
 import { Headers } from "../../components/Header/style";
 import { List } from "../../components/ProductList";
@@ -11,6 +12,7 @@ export const DashboardPage = () => {
     <>
       <Header />
       <List />
+      <Cart/>
     </>
   );
 };

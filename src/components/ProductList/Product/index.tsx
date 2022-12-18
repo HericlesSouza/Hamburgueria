@@ -1,6 +1,5 @@
 import { ButtonStyled } from "../../../styles/Button";
 import { StyledLi } from "./style";
-
 interface iProduct {
     id: string,
     name: string,
@@ -10,8 +9,6 @@ interface iProduct {
 }
 
 export const Product = ({ id, name, category, price, image}:iProduct) => {
-  
-
     const formattedPrice = new Intl.NumberFormat("pt-BR", {
         style: "currency",
         currency: "BRL",

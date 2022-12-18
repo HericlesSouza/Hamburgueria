@@ -10,8 +10,9 @@ export const CartProvider = ({ children }: iCartProvider) => {
     const tokenUser = item ? JSON.parse(item) : null;
     const [token, setToken] = useState<string | null>(tokenUser);
     const [menuItem, setMenuItem] = useState([] as [])
-
+    const [modal, setModal] = useState(false)
     const navigate = useNavigate()
+    console.log('hey')
     useEffect(() => {
         const getMenu = async () => {
             try {
@@ -28,7 +29,7 @@ export const CartProvider = ({ children }: iCartProvider) => {
         getMenu()
     }, [])
     return (
-      <CartContext.Provider value={{ token, setToken, menuItem }}>
+      <CartContext.Provider value={{ token, setToken, menuItem, modal, setModal}}>
         {children}
       </CartContext.Provider>
     );
