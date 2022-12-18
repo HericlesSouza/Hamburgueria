@@ -1,24 +1,36 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../../contexts/CartContext";
 import { iProductCart } from "../../contexts/CartContext/types";
 import { ModalWrapper } from "../Modal";
 import { Product } from "./CartProduct";
 import { ValueTotal } from "./CartTotal";
-// import { Product } from "./CartProduct";
-// import { ValueTotal } from "./CartTotal";
 import { CloseButtonModal, DivStyle } from "./style";
+import "animate.css";
 
 export const Cart = () => {
-  const { modal, setModal, menuItem, productCart } = useContext(CartContext);
-  
+  const { modal, setModal, productCart } = useContext(CartContext);
+  const [classModal, setClassModal] = useState(
+    "animate__animated animate__fadeInDown"
+  );
+
+  const closeModal = () => {
+    setClassModal("animate__animated animate__fadeOutUp");
+
+    setTimeout(() => {
+      setClassModal("animate__animated animate__fadeInDown");
+      setModal(false);
+    }, 700);
+
+  };
+
   return (
     <>
       {modal && (
         <ModalWrapper>
-          <DivStyle>
+          <DivStyle className={classModal}>
             <div className="div-title-cart">
               <h2>Carrinho de compras</h2>
-              <CloseButtonModal size={30} onClick={() => setModal(false)} />
+              <CloseButtonModal size={30} onClick={closeModal} />
             </div>
             {productCart.length == 0 ? (
               <div className="div-no-items">
@@ -28,10 +40,10 @@ export const Cart = () => {
             ) : (
               <>
                 <ul>
-                  {productCart.map((item: iProductCart, index:number) => {
+                  {productCart.map((item: iProductCart) => {
                     return (
                       <Product
-                        key={index}
+                        key={item.id}
                         image={item.image}
                         price={item.price}
                         name={item.name}

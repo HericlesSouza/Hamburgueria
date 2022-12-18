@@ -36,6 +36,8 @@ export const GlobalStyle = createGlobalStyle`
 
         --border-radius-1: 5px;
         --border-radius-2: 8px;
+
+        --animate-duration: 700ms;
     }
 
     * {

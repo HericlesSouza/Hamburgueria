@@ -5,6 +5,7 @@ import ShoppingBag from "../../assets/shopping-bag.svg";
 import Circles from "../../assets/circles.svg";
 import { useContext, useEffect } from "react";
 import { AuthContext } from "../../contexts/AuthProvider";
+import 'animate.css'
 
 export const RegisterPage = () => {
   const {checkValidUser} = useContext(AuthContext)
@@ -14,7 +15,7 @@ export const RegisterPage = () => {
   }, [])
 
   return (
-    <StyledDiv>
+    <StyledDiv className="animate__animated animate__fadeInLeft">
       <div className="divContent">
         <figure>
           <img src={Logo} alt="" />

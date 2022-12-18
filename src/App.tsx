@@ -13,7 +13,9 @@ function App() {
   return (
     <>
       <ThemeProvider theme={mainTheme}>
-        <ToastContainer />
+        <ToastContainer 
+          limit={5}
+        />
         <GlobalStyle />
         <AuthProvider>
           <UserProvider>
