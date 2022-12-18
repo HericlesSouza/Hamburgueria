@@ -4,7 +4,6 @@ import { ButtonSearch, Headers, IconLogout, MobileSearch, ShoppingCar } from "./
 import Logo from "/src/assets/logo.png";
 
 export const Header = () => {
-  
   return (
     <Headers>
       <div className="container">

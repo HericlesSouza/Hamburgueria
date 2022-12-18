@@ -1,10 +1,9 @@
 import { createContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { api } from "../../services/api";
 import { iCartProvider, iCartProviderValue } from "./types";
 
 export const CartContext = createContext({} as iCartProviderValue);
-
-
 
 export const CartProvider = ({ children }: iCartProvider) => {
     const item = localStorage.getItem('@token');
@@ -12,9 +11,9 @@ export const CartProvider = ({ children }: iCartProvider) => {
     const [token, setToken] = useState<string | null>(tokenUser);
     const [menuItem, setMenuItem] = useState([] as [])
 
+    const navigate = useNavigate()
     useEffect(() => {
         const getMenu = async () => {
-            console.log(token)
             try {
                 const response = await api.get('/products', {
                     headers: {
@@ -23,7 +22,7 @@ export const CartProvider = ({ children }: iCartProvider) => {
                 })
                 setMenuItem(response.data)
             } catch (err) {
-                console.log(err)
+                navigate('/')
             }
         }
         getMenu()
