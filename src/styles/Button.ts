@@ -3,7 +3,7 @@ import styled, { css }  from "styled-components";
 interface iButton {
     margin?: string,
     position?: string
-    buttonColor: 'btnGreen' | 'btnGrey',
+    buttonColor: 'btnGreen' | 'btnGrey' | 'btnRed', 
     buttonSize: 'small' | 'medium'
 }
 export const ButtonStyled = styled.button <iButton>`
@@ -47,6 +47,12 @@ export const ButtonStyled = styled.button <iButton>`
                     color: ${({theme}) => theme.colors.grey100};
                 }
                 `;
+            case "btnRed":
+                return css`
+                background: ${({theme}) => theme.colors.colorSecondary};
+                border: 2px solid ${({theme}) => theme.colors.colorSecondary};
+                color: ${({theme}) => theme.colors.grey300};
+                `
         }
     }}
 

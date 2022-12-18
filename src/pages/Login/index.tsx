@@ -3,9 +3,16 @@ import { FormLogin } from "../../components/Form/LoginForm";
 import Logo from "../../assets/Burguer_Kenzie.svg";
 import ShoppingBag from "../../assets/shopping-bag.svg";
 import Circles from "../../assets/circles.svg"
+import { useContext, useEffect } from "react";
+import { AuthContext } from "../../contexts/AuthProvider";
 
 export const PageLogin = () => {
+  const {checkValidUser} = useContext(AuthContext)
   
+  useEffect(() => {
+    checkValidUser('/')
+  }, [])
+
   return (
     <StyledDiv className="container">
       <div className="divContent">

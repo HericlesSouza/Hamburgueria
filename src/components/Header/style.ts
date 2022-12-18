@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { ButtonStyled } from "../../styles/Button";
 import { MdLogout } from "react-icons/md"
 import { FaSearch } from "react-icons/fa";
+import {AiOutlineClose} from "react-icons/ai"
 
 export const Headers = styled.header`  
   div {
@@ -59,6 +60,25 @@ export const Headers = styled.header`
           color: ${({ theme }) => theme.colors.grey100};
       }
 
+    }
+
+    #input-mobile {
+      display: flex;
+      z-index: 2;
+      position: absolute;
+      top: 10px;
+      left: 0;
+      right: 7px;
+      margin: 0 auto;
+      width: 90%;
+      
+      input {
+        width: 100%;
+      }
+
+      @media (min-width: 700px) {
+        display: none;
+      }
     }
     
     @media (max-width: 700px) {
@@ -131,4 +151,8 @@ export const MobileSearch = styled(FaSearch)`
   @media (min-width: 700px) {
     display: none;
   }
+`
+
+export const CloseInput = styled(AiOutlineClose)`
+
 `
