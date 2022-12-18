@@ -12,12 +12,12 @@ export const CartProvider = ({ children }: iCartProvider) => {
 
     const [token, setToken] = useState<string | null>(tokenUser);
     const [menuItem, setMenuItem] = useState([] as [])
+    const [searchedItem, setSearchedItem] = useState([])
     const [modal, setModal] = useState(false)
     const [productCart, setProductCart] = useState([])
     const [quantityProductCart, setQuantityProductCart] = useState([])
+    const [validToken, setValidToken] = useState(false)
 
-    console.log(productCart)
-    console.log(quantityProductCart)
     useEffect(() => {
         const getMenu = async () => {
             try {
@@ -26,6 +26,7 @@ export const CartProvider = ({ children }: iCartProvider) => {
                         Authorization: `Bearer ${token}`,
                     }
                 })
+                setValidToken(true)
                 setMenuItem(response.data)
             } catch (err) {
                 navigate('/')
@@ -35,7 +36,7 @@ export const CartProvider = ({ children }: iCartProvider) => {
     }, [])
 
     return (
-      <CartContext.Provider value={{ token, setToken, menuItem, modal, setModal, productCart, setProductCart, quantityProductCart, setQuantityProductCart}}>
+      <CartContext.Provider value={{ token, setToken, menuItem, searchedItem, setSearchedItem, modal, setModal, productCart, setProductCart, quantityProductCart, setQuantityProductCart, validToken}}>
         {children}
       </CartContext.Provider>
     );

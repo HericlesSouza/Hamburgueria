@@ -1,13 +1,16 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Cart } from "../../components/Cart";
 import { Header } from "../../components/Header";
-import { Headers } from "../../components/Header/style";
 import { List } from "../../components/ProductList";
-import { CartContext } from "../../contexts/CartContext";
+import { AuthContext } from "../../contexts/AuthProvider";
 
 export const DashboardPage = () => {
-  const { token, setToken, menuItem } = useContext(CartContext);
-
+  const {checkValidUser} = useContext(AuthContext)
+  
+  useEffect(() => {
+    checkValidUser('/')
+  }, [])
+  
   return (
     <>
       <Header />

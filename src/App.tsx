@@ -4,6 +4,8 @@ import { GlobalStyle, mainTheme } from "./styles/GlobalStyle";
 import { RoutesMain as Routes } from "./routes";
 import { ToastContainer } from "react-toastify";
 import { UserProvider } from "./contexts/UserContext";
+import { CartProvider } from "./contexts/CartContext";
+import { AuthProvider } from "./contexts/AuthProvider";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -11,13 +13,15 @@ function App() {
   return (
     <>
       <ThemeProvider theme={mainTheme}>
-        <ToastContainer
-       
-        />
+        <ToastContainer />
         <GlobalStyle />
-        <UserProvider>
-          <Routes />
-        </UserProvider>
+        <AuthProvider>
+          <UserProvider>
+            <CartProvider>
+              <Routes />
+            </CartProvider>
+          </UserProvider>
+        </AuthProvider>
       </ThemeProvider>
     </>
   );

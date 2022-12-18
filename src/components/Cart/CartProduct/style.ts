@@ -54,6 +54,10 @@ export const StyledLi = styled.li`
     align-items: center;
     gap: 8px;
 
+    @media (max-width: 340px) {
+      gap: 3px;
+    }
+
     .div-span > span {
         font-weight: var(--font-weight-3);
         font-size: var(--heading-3);
@@ -68,7 +72,15 @@ export const StyledLi = styled.li`
     justify-content: flex-end;
 
     span {
+      font-size: var(--heading-5);
       color: ${({theme}) => theme.colors.grey300};
+      
+    }
+
+    @media (max-width: 340px) {
+      span {
+        font-size: var(--caption);
+      }
     }
   }
 `;
