@@ -1,6 +1,7 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from "../../services/api";
+import { AuthContext } from "../AuthProvider";
 import { iCartProvider, iCartProviderValue} from "./types";
 
 export const CartContext = createContext({} as iCartProviderValue);
@@ -8,7 +9,6 @@ export const CartContext = createContext({} as iCartProviderValue);
 export const CartProvider = ({ children }: iCartProvider) => {
     const item = localStorage.getItem('@token');
     const tokenUser = item ? JSON.parse(item) : null;
-    const navigate = useNavigate()
 
     const [token, setToken] = useState<string | null>(tokenUser);
     const [menuItem, setMenuItem] = useState([] as [])
@@ -29,7 +29,6 @@ export const CartProvider = ({ children }: iCartProvider) => {
                 setValidToken(true)
                 setMenuItem(response.data)
             } catch (err) {
-                navigate('/')
             }
         }
         getMenu()

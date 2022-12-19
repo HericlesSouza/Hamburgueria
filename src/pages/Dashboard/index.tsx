@@ -6,12 +6,6 @@ import { AuthContext } from "../../contexts/AuthProvider";
 import "animate.css"
 import { StyledDiv } from "./style";
 export const DashboardPage = () => {
-  const { checkValidUser } = useContext(AuthContext);
-
-  useEffect(() => {
-    checkValidUser("/");
-  }, []);
-
   return (
     <>
       <StyledDiv className="animate__animated animate__fadeInLeft">
