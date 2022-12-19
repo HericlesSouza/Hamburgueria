@@ -8,15 +8,12 @@ import { CartContext } from "../../contexts/CartContext";
 import { useNavigate } from "react-router-dom";
 
 export const DashboardPage = () => {
-  const {reload, setReload, tokenUser} = useContext(CartContext)
+  const {tokenUser} = useContext(CartContext)
   const navigate = useNavigate()
   
   useEffect(() => {
     if(!tokenUser) {
       navigate('/')
-    }
-    if(reload) {
-      setReload(false)
     }
   },[])
 

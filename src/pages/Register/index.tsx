@@ -3,21 +3,20 @@ import { FormRegister } from "../../components/Form/RegisterForm";
 import Logo from "../../assets/Burguer_Kenzie.svg";
 import ShoppingBag from "../../assets/shopping-bag.svg";
 import Circles from "../../assets/circles.svg";
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
 import "animate.css";
-import { CartContext } from "../../contexts/CartContext";
 import { useNavigate } from "react-router-dom";
 
 export const RegisterPage = () => {
-  const {token} = useContext(CartContext)
+  const item = localStorage.getItem('@token');
+  const tokenUser = item ? JSON.parse(item) : null;
   const navigate = useNavigate()
-  
+
   useEffect(() => {
-    if(token) {
+    if(tokenUser) {
       navigate('/dashboard')
     }
   },[])
-
   return (
     <StyledDiv className="animate__animated animate__fadeInLeft">
       <div className="divContent">

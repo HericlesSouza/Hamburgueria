@@ -29,8 +29,6 @@ export interface iCartProviderValue {
     quantityProductCart: any,
     setQuantityProductCart: React.Dispatch<React.SetStateAction<any>>,
     validToken: boolean,
-    reload: boolean
-    setReload: React.Dispatch<React.SetStateAction<boolean>>,
 }
 
 export interface iCartProvider {

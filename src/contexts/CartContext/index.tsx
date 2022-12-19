@@ -14,7 +14,6 @@ export const CartProvider = ({ children }: iCartProvider) => {
     const [productCart, setProductCart] = useState([])
     const [quantityProductCart, setQuantityProductCart] = useState([])
     const [validToken, setValidToken] = useState(false)
-    const [reload, setReload] = useState(true)
 
     useEffect(() => {
         const getMenu = async () => {
@@ -33,7 +32,7 @@ export const CartProvider = ({ children }: iCartProvider) => {
     }, [])
 
     return (
-      <CartContext.Provider value={{ token, setToken, menuItem, searchedItem, setSearchedItem, modal, setModal, productCart, setProductCart, quantityProductCart, setQuantityProductCart, validToken, reload, setReload, tokenUser}}>
+      <CartContext.Provider value={{ token, setToken, menuItem, searchedItem, setSearchedItem, modal, setModal, productCart, setProductCart, quantityProductCart, setQuantityProductCart, validToken, tokenUser}}>
         {children}
       </CartContext.Provider>
     );

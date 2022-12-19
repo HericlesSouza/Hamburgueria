@@ -14,9 +14,7 @@ function App() {
       <ThemeProvider theme={darkMode ? darkTheme : mainTheme}>
         <ToastContainer limit={5} />
         <GlobalStyle />
-        <CartProvider>
-          <Routes />
-        </CartProvider>
+        <Routes />
       </ThemeProvider>
     </>
   );
