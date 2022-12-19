@@ -19,10 +19,14 @@ export const StyledDiv = styled.div`
 
         a {
             font-weight: var(--font-weight-1);
-            font-size: var(--heading-3);
             line-height: 22px;
+            font-size: var(--heading-3);
             text-decoration-line: none;
             color: ${({ theme }) => theme.colors.grey300};
+            
+            @media (max-width: 374px) {
+                font-size: var(--heading-5);
+            }
 
             :hover {
                 text-decoration: underline;

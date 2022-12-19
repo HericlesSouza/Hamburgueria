@@ -13,7 +13,7 @@ export const PageLogin = () => {
   const tokenUser = item ? JSON.parse(item) : null;
   const navigate = useNavigate();
   const { darkMode, setDarkMode } = useContext(UserContext);
-
+  
   useEffect(() => {
     if (tokenUser) {
       navigate("/dashboard");
