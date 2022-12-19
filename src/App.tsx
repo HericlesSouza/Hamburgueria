@@ -5,7 +5,6 @@ import { RoutesMain as Routes } from "./routes";
 import { ToastContainer } from "react-toastify";
 import { UserContext, UserProvider } from "./contexts/UserContext";
 import { CartProvider } from "./contexts/CartContext";
-import { AuthProvider } from "./contexts/AuthProvider";
 
 function App() {
   const { darkMode, setDarkMode } = useContext(UserContext);

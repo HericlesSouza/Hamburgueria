@@ -4,21 +4,20 @@ import Logo from "../../assets/Burguer_Kenzie.svg";
 import ShoppingBag from "../../assets/shopping-bag.svg";
 import Circles from "../../assets/circles.svg"
 import { useContext, useEffect } from "react";
-import { AuthContext } from "../../contexts/AuthProvider";
 import 'animate.css'
-import { UserContext } from "../../contexts/UserContext";
+import { CartContext } from "../../contexts/CartContext";
+import { useNavigate } from "react-router-dom";
 
 export const PageLogin = () => {
-  const {checkValidUser} = useContext(AuthContext)
-  const {darkMode, setDarkMode} = useContext(UserContext)
-  
-  useEffect(() => {
-    checkValidUser('/')
-    if (darkMode) {
-      setDarkMode(false);
-    }
-  }, [])
+  const {token} = useContext(CartContext)
+  const navigate = useNavigate()
 
+  useEffect(() => {
+    if(token) {
+      navigate('/dashboard')
+    }
+  },[])
+  
   return (
     <StyledDiv className="container animate__animated animate__fadeInLeft">
       <div className="divContent">

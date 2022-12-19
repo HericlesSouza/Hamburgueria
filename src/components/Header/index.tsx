@@ -17,7 +17,7 @@ import Logo from "/src/assets/logo.png";
 import "animate.css";
 
 export const Header = () => {
-  const { menuItem, setModal, quantityProductCart, setSearchedItem } =
+  const { menuItem, setModal, quantityProductCart, setSearchedItem, token, setToken} =
     useContext(CartContext);
   const { navigate } = useContext(UserContext);
   const [search, setSearch] = useState(false);
@@ -41,7 +41,7 @@ export const Header = () => {
         localStorage.removeItem(element);
       }
     });
-
+    setToken(null)
     navigate("/");
   };
 

@@ -1,7 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { api } from "../../services/api";
-import { AuthContext } from "../AuthProvider";
 import { iCartProvider, iCartProviderValue} from "./types";
 
 export const CartContext = createContext({} as iCartProviderValue);
@@ -9,7 +7,6 @@ export const CartContext = createContext({} as iCartProviderValue);
 export const CartProvider = ({ children }: iCartProvider) => {
     const item = localStorage.getItem('@token');
     const tokenUser = item ? JSON.parse(item) : null;
-
     const [token, setToken] = useState<string | null>(tokenUser);
     const [menuItem, setMenuItem] = useState([] as [])
     const [searchedItem, setSearchedItem] = useState([])
@@ -17,6 +14,7 @@ export const CartProvider = ({ children }: iCartProvider) => {
     const [productCart, setProductCart] = useState([])
     const [quantityProductCart, setQuantityProductCart] = useState([])
     const [validToken, setValidToken] = useState(false)
+    const [reload, setReload] = useState(true)
 
     useEffect(() => {
         const getMenu = async () => {
@@ -35,7 +33,7 @@ export const CartProvider = ({ children }: iCartProvider) => {
     }, [])
 
     return (
-      <CartContext.Provider value={{ token, setToken, menuItem, searchedItem, setSearchedItem, modal, setModal, productCart, setProductCart, quantityProductCart, setQuantityProductCart, validToken}}>
+      <CartContext.Provider value={{ token, setToken, menuItem, searchedItem, setSearchedItem, modal, setModal, productCart, setProductCart, quantityProductCart, setQuantityProductCart, validToken, reload, setReload, tokenUser}}>
         {children}
       </CartContext.Provider>
     );
