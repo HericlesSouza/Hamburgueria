@@ -28,6 +28,8 @@ export interface iCartProviderValue {
     quantityProductCart: any,
     setQuantityProductCart: React.Dispatch<React.SetStateAction<any>>,
     validToken: boolean,
+    valueInput: string,
+    setValueInput: React.Dispatch<React.SetStateAction<string>>,
 }
 
 export interface iCartProvider {

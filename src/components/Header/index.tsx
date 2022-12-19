@@ -22,12 +22,12 @@ export const Header = () => {
     setModal,
     quantityProductCart,
     setSearchedItem,
-    token,
     setToken,
+    valueInput,
+    setValueInput
   } = useContext(CartContext);
   const { navigate } = useContext(UserContext);
   const [search, setSearch] = useState(false);
-  const [valueInput, setValueInput] = useState("");
   const [animateShowInput, setAnimateShowInput] = useState("");
   const { darkMode, setDarkMode } = useContext(UserContext);
 

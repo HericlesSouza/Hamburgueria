@@ -14,6 +14,7 @@ export const CartProvider = ({ children }: iCartProvider) => {
   const [productCart, setProductCart] = useState([]);
   const [quantityProductCart, setQuantityProductCart] = useState([]);
   const [validToken, setValidToken] = useState(false);
+  const [valueInput, setValueInput] = useState("");
 
   useEffect(() => {
     const getMenu = async () => {
@@ -46,6 +47,8 @@ export const CartProvider = ({ children }: iCartProvider) => {
         setQuantityProductCart,
         validToken,
         tokenUser,
+        valueInput,
+        setValueInput
       }}
     >
       {children}

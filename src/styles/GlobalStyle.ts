@@ -18,6 +18,7 @@ export const mainTheme = {
         boxShadowHeader: "transparent",
         buttonHover: "#828282",
         buttonHoverText:"#FFFFFF",
+        iconGhost: "#E60000",
     },
     shadow: {
         boxShadow: "rgba(0, 0, 0, 0.25)"
@@ -41,7 +42,8 @@ export const darkTheme = {
         backgroundHeader: "#000000",
         boxShadowHeader: "#cccc00",
         buttonHover: "#999999",
-        buttonHoverText:"#FFFFFF"
+        buttonHoverText:"#FFFFFF",
+        iconGhost: "#FFFFFF",
     },
     shadow: {
         boxShadow: "rgba(0, 0, 0, 0.25)"

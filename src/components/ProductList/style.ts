@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { BiGhost } from "react-icons/bi"
 
 export const StyledDiv = styled.div`
   width: 100%;
@@ -59,6 +60,39 @@ export const StyledDiv = styled.div`
     line-height: 34px;
     color: var(--color-gray-50);
   }
+
+  .div-not-found-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+      max-width: 500px;
+      align-self: center;
+      text-align: center;
+      font-weight: var(--font-weight-4);
+      color: ${({ theme }) => theme.colors.iconGhost};
+    }
+
+    .animated-icon {
+      position: relative;
+      animation: iconAnimation 1s linear infinite;
+    }
+
+    @keyframes iconAnimation {
+      0% {
+        top: 0;
+      }
+      50% {
+        top: 10px;
+      }
+      100% {
+        top: 0;
+      }
+    }
+  }
 `;
 
 export const StyledUl = styled.ul`
@@ -82,3 +116,7 @@ export const StyledUl = styled.ul`
     margin: 35px auto 0 auto
   }
 `;
+
+export const IconNotFound = styled(BiGhost)`
+  color: ${({ theme }) => theme.colors.iconGhost};
+`
