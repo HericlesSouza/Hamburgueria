@@ -1,8 +1,8 @@
 import { Add, StyledLi, Subtract, Trash } from "./style";
-import "animate.css";
 import { useContext, useState } from "react";
 import { CartContext } from "../../../contexts/CartContext";
 import { iProductCart } from "../../../contexts/CartContext/types";
+import "animate.css";
 
 export const Product = ({ image, name, price, id }: iProductCart) => {
   const {

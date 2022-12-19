@@ -1,9 +1,14 @@
 import { createContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { iLoginUser, iRegisterUser, iUserProviderProps, iUserProviderValue } from "./types";
+import {
+  iLoginUser,
+  iRegisterUser,
+  iUserProviderProps,
+  iUserProviderValue,
+} from "./types";
+import { api } from "../../services/api";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { api } from "../../services/api";
 
 export const UserContext = createContext({} as iUserProviderValue);
 
@@ -32,7 +37,6 @@ export const UserProvider = ({ children }: iUserProviderProps) => {
       });
 
       navigate("/");
-      
     } catch (error) {
       setRegisterError(true);
 
@@ -51,11 +55,11 @@ export const UserProvider = ({ children }: iUserProviderProps) => {
     }
   };
 
-  const userLogin = async (data:iLoginUser) => {
+  const userLogin = async (data: iLoginUser) => {
     const id = toast.loading("Por favor espere...");
 
     try {
-      const request = await api.post("/login", data)
+      const request = await api.post("/login", data);
 
       toast.update(id, {
         render: "Login realizado com sucesso!",
@@ -71,11 +75,9 @@ export const UserProvider = ({ children }: iUserProviderProps) => {
       });
 
       navigate("/dashboard");
-  
-     localStorage.setItem('@token', JSON.stringify(request.data.accessToken))
-      
-    } catch (error){
-      
+
+      localStorage.setItem("@token", JSON.stringify(request.data.accessToken));
+    } catch (error) {
       toast.update(id, {
         render: "Ops, algo deu errado!",
         type: "error",
@@ -89,12 +91,20 @@ export const UserProvider = ({ children }: iUserProviderProps) => {
         progress: undefined,
       });
 
-      setRegisterError(true)
+      setRegisterError(true);
     }
-  }
+  };
   return (
     <UserContext.Provider
-      value={{ darkMode, setDarkMode, navigate, userRegister, registerError, setRegisterError, userLogin }}
+      value={{
+        darkMode,
+        setDarkMode,
+        navigate,
+        userRegister,
+        registerError,
+        setRegisterError,
+        userLogin,
+      }}
     >
       {children}
     </UserContext.Provider>

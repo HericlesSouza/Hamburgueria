@@ -1,6 +1,5 @@
 import React from "react";
 import { NavigateFunction } from "react-router-dom";
-
 export interface iUserProviderProps {
     children: React.ReactNode;
 }
@@ -11,7 +10,7 @@ export interface iUserProviderValue {
     userRegister(data: iRegisterUser): void,
     registerError: boolean,
     setRegisterError: React.Dispatch<React.SetStateAction<boolean>>
-    userLogin(data:iLoginUser): void
+    userLogin(data: iLoginUser): void
 }
 
 export interface iRegisterUser {
@@ -28,5 +27,5 @@ export interface iRegisterReset {
 
 export interface iLoginUser {
     email: string,
-    password:string
+    password: string
 }

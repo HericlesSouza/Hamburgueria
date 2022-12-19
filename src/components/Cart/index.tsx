@@ -20,7 +20,6 @@ export const Cart = () => {
       setClassModal("animate__animated animate__fadeInDown");
       setModal(false);
     }, 700);
-
   };
 
   return (

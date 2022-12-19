@@ -34,14 +34,14 @@ export const StyledDiv = styled.div`
         font-weight: var(--font-weight-2);
         font-size: var(--heading-4);
         line-height: 19px;
-        background: ${({theme}) => theme.colors.grey100};
-        border: 2px solid ${({theme}) => theme.colors.grey100};
-        color: ${({theme}) => theme.colors.grey300};
+        background: ${({ theme }) => theme.colors.grey100};
+        border: 2px solid ${({ theme }) => theme.colors.grey100};
+        color: ${({ theme }) => theme.colors.grey300};
 
         :hover {
-            background: ${({theme}) => theme.colors.grey300};
-            border: 2px solid ${({theme}) => theme.colors.grey300};
-            color: ${({theme}) => theme.colors.grey100};
+            background: ${({ theme }) => theme.colors.grey300};
+            border: 2px solid ${({ theme }) => theme.colors.grey300};
+            color: ${({ theme }) => theme.colors.grey100};
             }
     }
 `

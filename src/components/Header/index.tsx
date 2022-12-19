@@ -17,13 +17,19 @@ import Logo from "/src/assets/logo.png";
 import "animate.css";
 
 export const Header = () => {
-  const { menuItem, setModal, quantityProductCart, setSearchedItem, token, setToken} =
-    useContext(CartContext);
+  const {
+    menuItem,
+    setModal,
+    quantityProductCart,
+    setSearchedItem,
+    token,
+    setToken,
+  } = useContext(CartContext);
   const { navigate } = useContext(UserContext);
   const [search, setSearch] = useState(false);
   const [valueInput, setValueInput] = useState("");
   const [animateShowInput, setAnimateShowInput] = useState("");
-  const {darkMode, setDarkMode} = useContext(UserContext)
+  const { darkMode, setDarkMode } = useContext(UserContext);
 
   const filterProducts = (event: React.ChangeEvent<HTMLInputElement>) => {
     const searchedItem = menuItem.filter((element: iProductCart) =>
@@ -41,7 +47,7 @@ export const Header = () => {
         localStorage.removeItem(element);
       }
     });
-    setToken(null)
+    setToken(null);
     navigate("/");
   };
 
@@ -57,7 +63,7 @@ export const Header = () => {
       setSearch(false);
       setValueInput("");
       setSearchedItem([]);
-      setAnimateShowInput("div-input")
+      setAnimateShowInput("div-input");
     }, 700);
   };
 
@@ -99,9 +105,9 @@ export const Header = () => {
             </ButtonSearch>
           </div>
           {darkMode ? (
-            <IconSun size={30} onClick={() => setDarkMode(false)}/> 
-          ): (
-            <IconMoon size={30} onClick={() => setDarkMode(true)}/>
+            <IconSun size={30} onClick={() => setDarkMode(false)} />
+          ) : (
+            <IconMoon size={30} onClick={() => setDarkMode(true)} />
           )}
           <div className="shopping-car" onClick={() => setModal(true)}>
             <ShoppingCar size={30} />

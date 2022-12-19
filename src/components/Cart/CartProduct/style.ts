@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import {FiTrash2} from "react-icons/fi"
-import { BsPlusCircleDotted, BsDashCircleDotted} from "react-icons/bs"
+import { FiTrash2 } from "react-icons/fi"
+import { BsPlusCircleDotted, BsDashCircleDotted } from "react-icons/bs"
 
 export const StyledLi = styled.li`
   display: flex;
@@ -12,7 +12,7 @@ export const StyledLi = styled.li`
     min-height: 80px;
     max-width: 80px;
     max-height: 80px;
-    background: ${({theme}) => theme.colors.grey100};
+    background: ${({ theme }) => theme.colors.grey100};
     border-radius: var(--border-radius-1);
   }
 
@@ -39,7 +39,7 @@ export const StyledLi = styled.li`
     font-weight: var(--font-weight-3);
     font-size: var(--heading-3);
     line-height: 24px;
-    color: ${({theme}) => theme.colors.grey600};
+    color: ${({ theme }) => theme.colors.grey600};
   }
 
 
@@ -62,7 +62,7 @@ export const StyledLi = styled.li`
         font-weight: var(--font-weight-3);
         font-size: var(--heading-3);
         line-height: 16px;
-        color: ${({theme}) => theme.colors.grey600};
+        color: ${({ theme }) => theme.colors.grey600};
     }
   }
 
@@ -73,7 +73,7 @@ export const StyledLi = styled.li`
 
     span {
       font-size: var(--heading-5);
-      color: ${({theme}) => theme.colors.grey300};
+      color: ${({ theme }) => theme.colors.grey300};
       
     }
 
@@ -86,11 +86,11 @@ export const StyledLi = styled.li`
 `;
 
 export const Trash = styled(FiTrash2)`
-    color: ${({theme}) => theme.colors.grey200};
+    color: ${({ theme }) => theme.colors.grey200};
     cursor: pointer;
 
     :hover {
-        color: ${({theme}) => theme.colors.colorPrimary};
+        color: ${({ theme }) => theme.colors.colorPrimary};
     }
 `
 

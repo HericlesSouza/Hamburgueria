@@ -65,7 +65,7 @@ export const StyledDiv = styled.div`
                 margin-left: 20px;
                 font-size: var(--heading-5);
                 line-height: 22px;
-                color: ${({theme}) => theme.colors.grey300}
+                color: ${({ theme }) => theme.colors.grey300}
             }
     
             p > span {
